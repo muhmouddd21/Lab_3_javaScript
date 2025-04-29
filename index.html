@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab_3</title>
+</head>
+<body>
+    <div>
+        <img style="width: 300px; height: 300px;" src="./images/blue-clouds-day-fluffy-53594.jpeg" alt="">
+        <img style="width: 300px; height: 300px;" src="./images/images.jpeg" alt="">
+        <img style="width: 300px; height: 300px;"  src=".//images/istockphoto-1494319207-612x612.jpg" alt="">
+    </div>
+        
+    <div>
+        <label for="city">Select a city:</label>
+        <select id="city" name="city">
+            <option value="none">Choose a city</option>
+            <option value="cairo">cairo</option>
+            <option value="NC">NC</option>
+            <option value="benha">benha</option>
+        </select>
+
+    </div>
+
+    <script>
+        // let newWindow =window.open("./newWindow.html","_blank","width=400,height=400");
+        // if(newWindow){
+        //     window.close();
+        // }
+        console.log(document.images); //first way
+        console.log(document.getElementsByTagName("img")); // second way
+        
+        
+        let myElement = document.getElementById("city");
+        let options =myElement.children;
+        for(option of options){
+            console.log(option.value); // none cairo NC benha
+        }
+        
+        console.log(myElement);
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>
