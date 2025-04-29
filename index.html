@@ -20,9 +20,60 @@
             <option value="NC">NC</option>
             <option value="benha">benha</option>
         </select>
+        <table border="1">
+                <tr >
+                  <th>name</th>
+                  <th>age</th>
+                  <th>grade</th>
+                </tr>
+                <tr>
+                  <td class="fontBlue BGrey">mahmoud</td>
+                  <td class="fontBlue">20</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td class="fontBlue">ahmed</td>
+                  <td class="fontBlue BGrey">22</td>
+                  <td>B+</td>
+                </tr>
+                <tr>
+                  <td class="fontBlue BGrey">metwaly</td>
+                  <td class="fontBlue">19</td>
+                  <td>A-</td>
+                </tr>
+        </table>
+        <table border="1">
+            <tr>
+              <th>name</th>
+              <th>age</th>
+              <th>grade</th>
+            </tr>
+            <tr>
+              <td>Ali</td>
+              <td>20</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Sara</td>
+              <td>22</td>
+              <td>B+</td>
+            </tr>
+            <tr>
+              <td>Omar</td>
+              <td>19</td>
+              <td>A-</td>
+            </tr>
+    </table>
+    
 
     </div>
-
+    <form action="" method="get">
+        <label for="name">name:</label>
+        <input type="text" name="name">
+        <label for="age">age:</label>
+        <input type="text" name="age">
+        <button type="submit">submit</button>
+    </form>
     <script>
         // let newWindow =window.open("./newWindow.html","_blank","width=400,height=400");
         // if(newWindow){
@@ -37,11 +88,45 @@
         for(option of options){
             console.log(option.value); // none cairo NC benha
         }
+
+        let secondTable = document.getElementsByTagName("table")[1];
+        let tdElements =secondTable.getElementsByTagName("td");
+        for(td of tdElements){
+            console.log(td.innerText);
+            
+        }
         
-        console.log(myElement);
+ 
+        let containElemets = document.getElementsByClassName("fontBlue");
+        for(let ele of containElemets){
+            if(ele.classList.contains("BGrey")){
+                console.log(ele);
+            }
+        }
+
+        function updatingTitle(){
+            let now = new Date();
+            let dateTimeString = now.toLocaleString();
+            document.title = dateTimeString;
+        }
+
         
+         setInterval(()=>{
+            updatingTitle();
+        },1000)
+        //?name=mahmoud&age=25
+        console.log(location.search);
+        let str = location.search;
+        let arr1 = str.substring(1).split("&");
         
+        let obj={};
+        for(let elemt of arr1){
+            let splitted=elemt.split("=");
+            obj[splitted[0]]=splitted[1];
+        }
+        console.log(obj);
         
+
         
     </script>
     
